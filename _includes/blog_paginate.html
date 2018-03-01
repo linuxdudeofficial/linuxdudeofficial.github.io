@@ -1,0 +1,61 @@
+{% if paginator.total_pages > 1 %}
+	{% if paginator.page <= 3 %}{% assign start = 1 %}{% else %}{% assign start = paginator.page | minus: 2 %}{% endif %}
+	{% assign end = start | plus: 4 %}{% if end > paginator.total_pages %}{% assign end = paginator.total_pages %}{% endif %}
+	<nav class="pagination" role="navigation" aria-label="pagination">
+
+        {% if paginator.previous_page %}
+        <a class="pagination-previous" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" rel="prev">
+            Previous
+        </a>
+        {% else %}
+        <a class="pagination-previous" disabled="">
+            Previous
+        </a>
+        {% endif %}
+		
+		{% if paginator.next_page %}
+        <a class="pagination-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" rel="next">
+            Next page
+        </a>
+        {% else %}
+        <a class="pagination-next" disabled="">
+            Next page
+        </a>
+        {% endif %}
+
+  <ul class="pagination-list">
+	{% if paginator.page > 3 %}
+		<li>
+			<a class="pagination-link" aria-label="Goto page 1" href="/">1</a>
+		</li>
+		<li>
+			<span class="pagination-ellipsis">…</span>
+		</li>
+	{% endif %}
+	{% for page in (start..end) %}
+		{% if page == paginator.page %}
+			<li>
+				<a class="pagination-link is-current" aria-label="Page {{ page }}" aria-current="page">{{ page }}</a>
+			</li>
+		{% elsif page == 1 %}
+			<li>
+				<a class="pagination-link" aria-label="Goto page 1" href="/">{{ page }}</a>
+			</li>
+		{% else %}
+		<li>
+			<a class="pagination-link" aria-label="Goto page 3" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+		</li>
+		{% endif %}
+	{% endfor %}
+	{% if paginator.total_pages > end %}
+		<li>
+			<span class="pagination-ellipsis">…</span>
+		</li>
+		<li>
+			<a class="pagination-link" aria-label="Goto page {{ paginator.total_pages }}" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}">{{ paginator.total_pages }}</a>
+		</li>
+	{% endif %}
+  </ul>
+</nav>
+<div class="pagination-count">Page {{ paginator.page }} of {{ paginator.total_pages }}</div>
+{% endif %}

@@ -1,0 +1,110 @@
+---
+layout: blog_new
+title: Home
+pagination: true
+noBreadcrumbs: true
+---
+
+<section id="site-intro" class="intro hero	">
+  <div class="hero-body">
+    <div class="container">
+			<h1 class="sitetitle title">LinuxDude</h1>
+			<p class="subtitle">
+				 Learn to Master Linux: One post at a time!
+			</p>
+    </div>
+  </div>
+</section>
+    <section id="blog-list" class="container blog-list">
+        <div class="featured-list">
+            <div class="section-title">
+                <h2><span>Featured</span></h2>
+            </div>
+            <div class="column">
+                <div class="columns is-centered">
+		{% assign my_posts = site.posts | where:"featured",true %}
+		{% if my_posts.size > 1 %}
+					    {% for post in my_posts limit:2 %}
+					    <div class="column is-6">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="columns">
+                                    <div class="column is-4 wrap-thumbnail">
+                                        <div class="thumbnail" style="background-image:url(/assets/post-image.png);">
+                                        </div>
+                                    </div>
+                                    <div class="column wrap-content">
+                                        <div class="content">
+                                            <h2 class="title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncatewords: 8 }}</a></h2>
+                                            <p class="text">Lorem ipsum dolor sit amet, consectetur is my adipiscing elit. Phasellus nec iaculis mauris.</p>
+                                            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                                        </div>
+                                        <div class="metafooter">
+                                            <div class="wrapfooter">
+
+                                                <span class="meta-footer-thumb">
+												<img class="author-thumb" src="/assets/user.png" alt="John">
+												</span>
+                                                <span class="author-meta">
+												<span class="post-name"><a target="_blank" href="https://www.wowthemes.net">John</a></span>
+                                                <br>
+
+                                                <span class="post-date">{{ post.date | date_to_string }}</span>
+                                                </span>
+                                                <span class="post-read-more"><a href="https://wowthemesnet.github.io/mediumish-theme-jekyll/jekyll/tutorial/2018/01/12/we-all-wait-for-summer.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				{% endfor %}
+				{% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="post-list">
+            <div class="section-title">
+                <h2><span>All Articles</span></h2>
+            </div>
+            <div class="column">
+                <div class="columns is-multiline">
+    {% for post in paginator.posts %}
+    <div class="column is-4">
+                        <div class="card">
+                            <div class="card-image wrap-thumbnail">
+                                <div class="thumbnail" style="background-image:url(/assets/post-image.png);">
+								</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                            <h2 class="title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncatewords: 8 }}</a></h2>
+                                            <p class="text">Lorem ipsum dolor sit amet, consectetur is my adipiscing elit. Phasellus nec iaculis mauris.</p>
+                                        </div>
+                                        <div class="metafooter">
+                                            <div class="wrapfooter">
+
+                                                <span class="meta-footer-thumb">
+												<img class="author-thumb" src="/assets/user.png" alt="John">
+												</span>
+                                                <span class="author-meta">
+												<span class="post-name"><a target="_blank" href="https://www.wowthemes.net">John</a></span>
+                                                <br>
+
+                                                <span class="post-date">{{ post.date | date_to_string }}</span>
+                                                </span>
+                                                <span class="post-read-more"><a href="https://wowthemesnet.github.io/mediumish-theme-jekyll/jekyll/tutorial/2018/01/12/we-all-wait-for-summer.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+    {% endfor %}
+                </div>
+            </div>
+        </div>
+	{% include blog_paginate.html %}
+    </section>

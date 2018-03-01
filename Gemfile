@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'github-pages', group: :jekyll_plugins
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
+#gem 'jekyll-admin', group: :jekyll_plugins

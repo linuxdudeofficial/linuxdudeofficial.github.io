@@ -1,0 +1,36 @@
+---
+title: feed
+permalink: /page/feed/
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+
+	<title>Blog</title>
+
+	<link href="{{ site.url }}/feed/" type="application/atom+xml" rel="self"/>
+	<link type="text/html" href="{{ site.url | uri_escape }}" rel="alternate"/>
+
+	<generator uri="http://jekyllrb.com/">Jekyll</generator>
+
+
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>{{ site.url }}/</id>
+	<author>
+		<name>mobihack</name>
+		<email>mobihack.me@gmail.com</email>
+	</author>
+
+	{% for post in site.posts limit:10 %}
+	<entry>
+		<title type="html"><![CDATA[{{ post.title }}]]></title>
+		<author>
+			<name>{{ post.author | xml_escape }}</name>
+		</author>
+		<link href="{{ site.url }}{{ post.url | absolute }}"/>
+		<updated>{{ post.date | date_to_xmlschema }}</updated>
+		<id>{{ site.url }}{{ post.id }}</id>
+		<summary type="html"><![CDATA[{{ post.excerpt }}]]></summary>
+	</entry>
+  	{% endfor %}
+
+</feed>
