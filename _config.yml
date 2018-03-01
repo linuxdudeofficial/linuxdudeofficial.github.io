@@ -34,9 +34,9 @@ related_posts_max: 4
 paginate: 6
 paginate_path: "/page/:num"
 
-disqus: "linuxdude"
+disqus_username: "linuxdude"
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap

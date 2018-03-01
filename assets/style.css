@@ -44,6 +44,10 @@ nav.navbar.is-white .navbar-end > a.navbar-item.is-active
 	background-color:white;
 	border-bottom: 2px black solid;
 }
+nav.navbar .navbar-end .navbar-search input{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
 nav.navbar .navbar-end .navbar-search input:focus{
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -256,7 +260,7 @@ span.post-read-more a {
 }
 .post-meta .meta{
 	color:rgba(0,0,0,.44);
-	font-size: 20px;
+	font-size: 15px;
 	
 }
 .post-image img{
