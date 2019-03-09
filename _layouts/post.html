@@ -40,7 +40,7 @@ layout: blog_new
      {% endfor %}</div>
      <br>
 			<div class="post-image">
-				<img src="{{ page.image.path }}" alt="{{ page.title }}">
+				<img src="{{ page.image.path }}" width="{{ path.image.height }}" height="{{ path.image.height }}" alt="{{ page.title }}">
 			</div>
 				<div class="content article-post">
 					  {{ page.content | markdownify}}
