@@ -37,22 +37,21 @@ page_id: "home"
                                     <div class="column wrap-content">
                                         <div class="content">
                                             <h2 class="title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncatewords: 8 }}</a></h2>
-                                            <p class="text">Lorem ipsum dolor sit amet, consectetur is my adipiscing elit. Phasellus nec iaculis mauris.</p>
-                                            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                                            <p class="text">{{ post.content | truncatewords: 15 }}</p>
                                         </div>
                                         <div class="metafooter">
                                             <div class="wrapfooter">
 
                                                 <span class="meta-footer-thumb">
-												<img class="author-thumb" src="/assets/user.png" alt="John">
+												<img class="author-thumb" src="/static/img/{{ post.author }}.jpg" alt="{{ post.author }}">
 												</span>
                                                 <span class="author-meta">
-												<span class="post-name"><a target="_blank" href="https://www.wowthemes.net">John</a></span>
+												<span class="post-name"><a target="_blank" href="#">{{ post.author }}</a></span>
                                                 <br>
 
                                                 <span class="post-date">{{ post.date | date_to_string }}</span>
                                                 </span>
-                                                <span class="post-read-more"><a href="https://wowthemesnet.github.io/mediumish-theme-jekyll/jekyll/tutorial/2018/01/12/we-all-wait-for-summer.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                                                <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>
@@ -82,21 +81,21 @@ page_id: "home"
                             <div class="card-content">
                                 <div class="content">
                                             <h2 class="title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncatewords: 8 }}</a></h2>
-                                            <p class="text"> {{ post.content | truncatewords: 20 }} </p>
+                                            <p class="text"> {{ post.content | truncatewords: 12 }} </p>
                                         </div>
                                         <div class="metafooter">
                                             <div class="wrapfooter">
 
                                                 <span class="meta-footer-thumb">
-												<img class="author-thumb" src="/assets/user.png" alt="John">
+												<img class="author-thumb" src="/static/img/{{ post.author }}.jpg" alt="{{ post.author }}">
 												</span>
                                                 <span class="author-meta">
-												<span class="post-name"><a target="_blank" href="https://www.wowthemes.net">John</a></span>
+												<span class="post-name"><a target="_blank" href="#">{{ post.author }}</a></span>
                                                 <br>
 
                                                 <span class="post-date">{{ post.date | date_to_string }}</span>
                                                 </span>
-                                                <span class="post-read-more"><a href="https://wowthemesnet.github.io/mediumish-theme-jekyll/jekyll/tutorial/2018/01/12/we-all-wait-for-summer.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
+                                                <span class="post-read-more"><a href="#" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>

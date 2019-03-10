@@ -4,7 +4,8 @@ thecodefreak:
     id: thecodefreak
     name: Amal
     github: thecodefreak
-    bio: Write bio amal
+    picture: /static/img/thecodefreak.png
+    bio: codefreak is an experienced PHP Developer along with skill sets in Server administration & Scripting. He is always looking forward to hook up with new Technologies.
 
 rajat:
     id: rajat
