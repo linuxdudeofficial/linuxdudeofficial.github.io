@@ -31,7 +31,7 @@ page_id: "home"
                             <div class="card-content">
                                 <div class="columns">
                                     <div class="column is-4 wrap-thumbnail">
-                                        <div class="thumbnail" style="background-image:url(/assets/post-image.png);">
+                                        <div class="thumbnail" style="background-image:url({{ post.image.path }});">
                                         </div>
                                     </div>
                                     <div class="column wrap-content">
@@ -76,13 +76,13 @@ page_id: "home"
     <div class="column is-4">
                         <div class="card">
                             <div class="card-image wrap-thumbnail">
-                                <div class="thumbnail" style="background-image:url(/assets/post-image.png);">
+                                <div class="thumbnail" style="background-image:url({{ post.image.path }});">
 								</div>
                             </div>
                             <div class="card-content">
                                 <div class="content">
                                             <h2 class="title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title | truncatewords: 8 }}</a></h2>
-                                            <p class="text">Lorem ipsum dolor sit amet, consectetur is my adipiscing elit. Phasellus nec iaculis mauris.</p>
+                                            <p class="text"> {{ post.content | truncatewords: 20 }} </p>
                                         </div>
                                         <div class="metafooter">
                                             <div class="wrapfooter">

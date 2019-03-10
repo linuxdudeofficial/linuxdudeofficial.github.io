@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rockitech.net/sitemap.xml
+Sitemap: https://linuxdude.in/sitemap.xml

@@ -1,8 +1,8 @@
 name: RockiTech Blog
 
 description: "A blog dedicated to articles related to things like web development, design, server management..."
-url: "https://rockitech.net"
-enforce_ssl: "rockitech.net"
+url: "https://linuxdude.in"
+enforce_ssl: "linuxdude.in"
 
 logo: /static/img/logo.png
 
@@ -45,4 +45,4 @@ plugins:
   - jekyll-toc
   - jekyll-redirect-from
 
-commentsPath: "https://cdn.rockitech.net/comments/add"
+commentsPath: "https://cdn.linuxdude.in/comments/add"
