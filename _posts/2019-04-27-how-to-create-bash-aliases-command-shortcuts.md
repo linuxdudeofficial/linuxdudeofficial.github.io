@@ -20,7 +20,7 @@ category: Linux
 Even if you were not aware of this aliases functionality you might have been thought about this.  Instead calling a commonly used long command line to single word? It's quite useful right? Yes it is :D
 
 # How to do it?
-Well, it is not that hard as you think or some of you might already know how to create a command alias temporarily. Anyway, here it goes...
+Well, it is not that hard as you think or you might already know how to create a command alias temporarily. Anyway, here it goes...
 
 First how create an alias ?
 
@@ -34,7 +34,7 @@ The above given example is the syntax for creating a command alias. For a clear 
 alias webroot='cd /var/www/projects'
 ```
 
-run this on your terminal and run the command webroot on the terminal, your presernt working directory on the terminal will be changed to /var/www/projects and that’s how useful it is. But the problem is that when you run the alias command on the terminal the alias will be available on that particular terminal until it closes. How to make this permanent.
+run this on your terminal and run the command webroot on the terminal, your present working directory on the terminal will be changed to /var/www/projects and that’s how useful it is. But the problem is that when you run the alias command on the terminal the alias will be available on that particular terminal until it closes. How to make this permanent.
 
 open the .bashrc file on your home directory 
 
