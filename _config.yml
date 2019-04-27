@@ -1,48 +1,37 @@
-name: RockiTech Blog
-
-description: "A blog dedicated to articles related to things like web development, design, server management..."
-url: "https://linuxdude.in"
-enforce_ssl: "linuxdude.in"
-
+name: LinuxDude
+description: >-
+  A blog dedicated to articles related to things like web development, design,
+  server management...
+url: 'https://linuxdude.in'
+enforce_ssl: linuxdude.in
 logo: /static/img/logo.png
-
 facebook:
   app_id: 1830897697239746
- 
 defaults:
   - scope:
-      path: ""
+      path: ''
     values:
       image:
-        path: "/static/img/logo-card.png"
+        path: /static/img/logo-card.png
         height: 800
         width: 800
-
-markdown:    kramdown
+markdown: kramdown
 highlighter: rouge
-kramdown:  
+kramdown:
   parse_block_html: true
-  # Enable GitHub Flavored Markdown (fenced code blocks)
   input: GFM
-  # Disable auto-generated ID's for headings
   auto_ids: true
-
-permalink: /p/:categories/:title.html
-
+permalink: '/p/:categories/:title.html'
 related_posts_max: 4
-
 paginate: 6
-paginate_path: "/page/:num"
-
-disqus_username: "linuxdude"
-
+paginate_path: '/page/:num'
+disqus_username: linuxdude
 plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
   - jemoji
-# - jekyll-admin
+  - jekyll-admin
   - jekyll-toc
   - jekyll-redirect-from
-
-commentsPath: "https://cdn.linuxdude.in/comments/add"
+commentsPath: 'https://cdn.linuxdude.in/comments/add'

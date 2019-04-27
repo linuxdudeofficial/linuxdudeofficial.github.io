@@ -1,0 +1,92 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>"Why you should know about Vanila JS!" </title></head><body>
+<blockquote>
+<p>Vanilla JS is a fast, lightweight, cross-platform framework for building incredible, powerful JavaScript applications.</p>
+</blockquote>
+<p>You might be thinking why you didn't know about this framework? Because it's just plain js. Vanilla JS is all about using regular js code to create code rather than using heavy frameworks like Jquery.</p>
+<p>This is VanillaJS (unmodified):</p>
+<p><code>// VanillaJS v1.0
+// Released into the Public Domain
+// Your code goes here:</code></p>
+<h2 id="why-should-i-use-it">Why should I use it?</h2>
+<p>If you are a professional programmer who needs all the performance improvements you can get, then look no further. Vanilla JS has multiple times more performance than many frameworks. Why? Because they all use plain JS in their code :D</p>
+<h2 id="what-are-the-cons">What are the cons?</h2>
+<p>Everything has got their own pros and cons. One of the biggest problems with Vanilla JS is that the code is a little bit longer than using a framework. This is because frameworks do all the dirty works for you to have an easily usable and understandable piece of code.</p>
+<h2 id="some-examples-please">Some examples, please.</h2>
+<p>Of course, I'll list some of the alternatives for widely used jquery codes.</p>
+<h3 id="each-element">Each Element</h3>
+<p>Jquery:</p>
+<p>```js
+$(selector).each(function(i, el){</p>
+<p>});
+```</p>
+<p>Vanilla JS:</p>
+<p>```js
+function forEachElement(selector, fn) {
+  var elements = document.querySelectorAll(selector);
+  for (var i = 0; i &lt; elements.length; i++)
+    fn(elements[i], i);
+}</p>
+<p>forEachElement(selector, function(el, i){</p>
+<p>});
+```</p>
+<h3 id="toggle-element-class">Toggle Element Class</h3>
+<p>Jquery:</p>
+<p><code>js
+$(el).toggleClass(className);</code></p>
+<p>Vanilla JS:</p>
+<p>```js
+if (el.classList) {
+  el.classList.toggle(className);
+} else {
+    var classes = el.className.split(' ');
+    var existingIndex = -1;
+    for (var i = classes.length; i--;) {
+      if (classes[i] === className)
+        existingIndex = i;
+    }</p>
+<pre><code>if (existingIndex &gt;= 0)
+  classes.splice(existingIndex, 1);
+else
+  classes.push(className);
+</code></pre>
+<p>el.className = classes.join(' ');
+}
+```</p>
+<h3 id="json-based-ajax">JSON-based AJAX</h3>
+<p>Jquery:</p>
+<p>```js
+$.getJSON('/my/url', function(data) {</p>
+<p>});
+```</p>
+<p>Vanilla JS:</p>
+<p>```js
+//IE8+</p>
+<p>var request = new XMLHttpRequest();
+request.open('GET', '/my/url', true);</p>
+<p>request.onreadystatechange = function() {
+  if (this.readyState === 4) {
+    if (this.status &gt;= 200 &amp;&amp; this.status &lt; 400) {
+      // Success!
+      var data = JSON.parse(this.responseText);
+    } else {
+      // Error :(
+    }
+  }
+};</p>
+<p>request.send();
+request = null;</p>
+<p>```</p>
+<h2 id="summary">Summary</h2>
+<p>Vanilla JS is a running joke amongst programmers who use it to remind other developers that many things can be done nowadays without the need for additional JavaScript libraries. Everyone should use pure JS rather than relying on Jquery for small things. Pure JS also has high performance. If you are interested, you can visit these sites for more information and alternative codes:</p>
+<ul>
+<li>
+<p><a href="http://vanilla-js.com/">Vanilla-JS.Com</a></p>
+</li>
+<li>
+<p><a href="http://youmightnotneedjquery.com/">YouMightNotNeedJquery.Com</a></p>
+</li>
+<li>
+<p><a href="https://plainjs.com/">PlainJS.Com</a></p>
+</li>
+</ul>
+</body></html>

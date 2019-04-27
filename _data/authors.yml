@@ -1,28 +1,29 @@
-#Make id first field.
-
 thecodefreak:
-    id: thecodefreak
-    name: Amal
-    github: thecodefreak
-    picture: /static/img/thecodefreak.png
-    bio: codefreak is an experienced PHP Developer along with skill sets in Server administration & Scripting. He is always looking forward to hook up with new Technologies.
-
+  id: thecodefreak
+  name: Amal John Ronkha
+  github: thecodefreak
+  picture: /static/img/thecodefreak.png
+  bio: >-
+    thecodefreak is an experienced PHP Developer along with skill sets in Server
+    administration & Shell Scripting. He is always looking forward for hooking
+    up with new Technologies.
 rajat:
-    id: rajat
-    name: Rajat
-    github: feat7
-    bio: Write bio rajat
-
+  id: rajat
+  name: Rajat
+  github: feat7
+  bio: Write bio rajat
 mobihack:
-    id: mobihack
-    name: Shameem
-    github: mobihack
-    twitter: mobihack
-    picture: /static/img/mobihack.png
-    bio: mobihack is an experienced PHP Developer with skills in front-end development. In his leisure time, he likes to listen to EDM Music, read books, or learn something new in programming!
-
-feat7:    
-    id: feat7
-    name: Vinay
-    github: feat7
-    bio: Write bio vinay
+  id: mobihack
+  name: Shameem
+  github: mobihack
+  twitter: mobihack
+  picture: /static/img/mobihack.png
+  bio: >-
+    mobihack is an experienced PHP Developer with skills in front-end
+    development. In his leisure time, he likes to listen to EDM Music, read
+    books, or learn something new in programming!
+feat7:
+  id: feat7
+  name: Vinay
+  github: feat7
+  bio: Write bio vinay
