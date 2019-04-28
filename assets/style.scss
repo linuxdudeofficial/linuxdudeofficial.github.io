@@ -1,6 +1,8 @@
 ---
 ---
- 
+
+$primary_color:#3273dc;
+
 html,
 body {
 	font-family: "Open Sans", sans-serif;
@@ -98,7 +100,7 @@ nav.navbar .navbar-end .navbar-search input {
 	height: 200px;
 }
 	.card-content {
-		min-height: 250px;
+		min-height: 230px;
 	}
 }
 
@@ -109,13 +111,13 @@ nav.navbar .navbar-end .navbar-search input {
 		padding: 0px;
 		
 		> .thumbnail {
-	background-size: cover;
-	height: 100%;
-	display: block;
-	background-position: center;
-	background-origin: border-box !important;
-	border-top-left-radius: 2px;
-}
+			background-size: cover;
+			height: 100%;
+			display: block;
+			background-position: center;
+			background-origin: border-box !important;
+			border-top-left-radius: 2px;
+		}
 	}
 	.wrapfooter {
 	font-size: 12px;
@@ -161,17 +163,35 @@ display: inline-block;
 }
 
 @media screen and (max-width: 768px) {
-	.blog-list .wrap-thumbnail {
-		padding: 0px 10.5px;
-	}
 	.featured-list .card {
 		margin-bottom: 20px;
 		.card-content {
 		min-height: 500px;
 	}
+	.wrap-thumbnail {
+		padding: 0px 10.5px;
+	}
 	}
 }
-
+@media screen and (max-width: 1088px) and (min-width: 768px) {
+	.blog-list{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+@media screen and (max-width: 769px) and (min-width: 500px) {
+	.post-list{
+		.columns{
+			display: flex;
+			flex-wrap: wrap;
+			.column{
+				width: 50%;
+				flex:none;
+			}
+		}
+		
+	}
+}
 
 .featured-list .card-content {
 	padding: 0px;
@@ -246,6 +266,10 @@ display: inline-block;
 	.author-info {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
+
+	.image-block figure > img {
+		border-radius: 50%;
+	}
 		@media screen and (max-width: 768px) {
 	.info-block {
 		text-align: center;
@@ -261,9 +285,6 @@ display: inline-block;
 		margin-left: auto;
 		margin-right: auto;
 		display: block;
-		.author-image {
-	border-radius: 50%;
-}
 	}
 }
 }
@@ -328,7 +349,7 @@ div.column.is-8:first-child {
 footer {
 	margin-top: 2rem;
 	padding: 50px 20px 20px;
-	background-color: #f6f9fc;
+	background-color: #f5f5f5;
 }
 .footer-item-header {
 	font-size: 16px;
@@ -358,7 +379,7 @@ ul#my_toc li a {
 }
 
 ul#my_toc li a.active {
-	color: #00d1b2;
+	color: $primary_color;
 }
 
 ul#my_toc li ul {

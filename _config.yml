@@ -11,6 +11,7 @@ defaults:
   - scope:
       path: ''
     values:
+      comments: true
       image:
         path: /static/img/logo-card.png
         height: 800
@@ -34,4 +35,3 @@ plugins:
   - jekyll-admin
   - jekyll-toc
   - jekyll-redirect-from
-commentsPath: 'https://cdn.linuxdude.in/comments/add'

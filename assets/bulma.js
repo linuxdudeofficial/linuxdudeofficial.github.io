@@ -12,28 +12,7 @@
          });
      }
  })();
- //Generate hash
- String.prototype.hashCode = function() {
-     var hs = 0,
-         i, chr;
-     if (this.length === 0) return hs;
-     for (i = 0; i < this.length; i++) {
-         chr = this.charCodeAt(i);
-         hs = ((hs << 5) - hs) + chr;
-         hs |= 0; // Convert to 32bit integer
-     }
-     return (hs >>> 0);
- };
- //Generate Identicons
- var xv = document.getElementsByClassName('identicons');
- if (xv.length > 0) {
-     for (var i = 0; i < xv.length; ++i) {
-         var xy = xv[i];
-         xy.setAttribute('data-jdenticon-hash', '555' + xy.getAttribute("data-jdenticon-url").hashCode());
-     }
-     jdenticon();
- }
-
+ 
  function outerHeight(elem) {
      var curStyle = elem.currentStyle || window.getComputedStyle(elem);
      ht = elem.offsetHeight;
