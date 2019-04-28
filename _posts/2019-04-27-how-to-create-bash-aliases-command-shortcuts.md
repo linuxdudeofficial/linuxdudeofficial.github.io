@@ -1,12 +1,9 @@
 ---
 title: How to create bash aliases (command shortcuts)
-image:
-  path: "/static/article-pics/bash-aliases.jpg"
-  height: 800
-  width: 480
 layout: post
 date: '2019-04-27 02:17:36'
 author: thecodefreak
+pexcerpt: "A simple guide to learn about bash aliases."
 tags:
 - bash
 - bashalias
@@ -15,6 +12,10 @@ tags:
 comment: true
 featured: true
 category: Linux
+image:
+  path: "/static/article-pics/bash-aliases.jpg"
+  height: 800
+  width: 480
 ---
 
 Even if you were not aware of this aliases functionality you might have been thought about this.  Instead calling a commonly used long command line to single word? It's quite useful right? Yes it is :D

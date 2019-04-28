@@ -3,6 +3,7 @@ layout: post
 title: "Beginning - The start of my new blog!"
 date: 2016-12-06
 author: "mobihack"
+pexcerpt: "It's all done and ready!"
 category: General
 tags: [general, announcement]
 image2:

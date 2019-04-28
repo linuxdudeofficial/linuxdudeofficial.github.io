@@ -2,17 +2,17 @@
 layout: blog_new
 ---
 {% assign userData = site.data.authors[page.author] %}
-<section id="blog-post" class="container">
+<section class="container blog-post">
 		<div class="author-info">
 			<div class="column is-8 is-offset-2">
 				<div class="columns">
 					<div class="column is-narrow image-block">
 						<figure class="image is-96x96">
-							<img src="https://github.com/{{ userData.github }}.png?size=96" class="author-image" alt="{{ page.author }} Photo">
+							<img src="https://github.com/{{ userData.github }}.png?size=128" class="author-image" alt="{{ page.author }} Photo">
 						</figure>
 					</div>
 					<div class="column info-block">
-						<a target="_blank" class="author-title" href="/author/user">@{{ page.author }}</a> <a target="_blank" href="https://github.com/{{ userData.github }}" class="button is-primary is-outlined is-rounded is-small">Follow</a><br>
+						<span>@{{ page.author }}</span> <a target="_blank" href="https://github.com/{{ userData.github }}" class="button is-primary is-outlined is-rounded is-small">Follow</a><br>
 						<p class="author-description">{{ userData.bio }}</p>
 					</div>
 				</div>
@@ -30,11 +30,12 @@ layout: blog_new
         </div>
         {% endif %}
 		<div class="column is-8 is-offset-2" id="post-content">
-			<div class="post-title title">{{ page.title }}</div>
+			<h1 class="post-title title">{{ page.title }}</h1>
 			<div class="post-meta">
 				<p class="meta"> <small> <svg id="i-calendar" viewBox="0 0 32 32" width="15" height="15" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path></svg>&nbsp;<time itemprop="datePublished" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>&nbsp; 
 				<svg id="i-eye" viewBox="0 0 32 32" width="18" height="18" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="17" cy="15" r="1"></circle> <circle cx="16" cy="16" r="6"></circle><path d="M2 16 C2 16 7 6 16 6 25 6 30 16 30 16 30 16 25 26 16 26 7 26 2 16 2 16 Z"></path></svg>&nbsp;<span class="post-view" id="ga-pageviews">562</span>&nbsp; 
-				<span class="read-time" title="Estimated read time"> <svg id="i-clock" viewBox="0 0 32 32" width="15" height="15" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <circle cx="16" cy="16" r="14"></circle><path d="M16 8 L16 16 20 20"></path> </svg> <span itemprop="timeRequired"> {% assign words = content | number_of_words %}{% if words < 270 %}1 minute{% else %}{{ words | divided_by:135 }} minutes{% endif %} read. </span> </span>&nbsp; </small></p></div>
+				<span class="read-time" title="Estimated read time"> <svg id="i-clock" viewBox="0 0 32 32" width="15" height="15" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"> <circle cx="16" cy="16" r="14"></circle><path d="M16 8 L16 16 20 20"></path> </svg> <span itemprop="timeRequired"> {% assign words = content | number_of_words %}{% if words < 270 %}1 minute{% else %}{{ words | divided_by:135 }} minutes{% endif %} read. </span> </span>&nbsp; </small></p>
+			</div>
     <div class="tag-list">{% for tag in page.tags %}
        <a class="tag" href="/page/tags/#{{ tag | slugify }}">{{ tag }}</a>
      {% endfor %}</div>

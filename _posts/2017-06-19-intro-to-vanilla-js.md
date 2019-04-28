@@ -3,6 +3,7 @@ layout: post
 title: "Why you should know about Vanila JS!"
 date: 2017-06-19
 author: "mobihack"
+pexcerpt: "A beginners guide to Vanilla JS and all the cool perks attatched with it."
 category: Javascript
 tags: [js,javascript,vanilla js,pure js,intro]
 comments: true

@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "Let's Encrypt will begin issuing Wildcard Certificates Coming January 2018!!"
+title: "Let's Encrypt to issue Wildcard Certificates starting from 2018!"
 date: 2017-07-07
 author: "mobihack"
+pexcerpt: "The popular service dedicated to issue free SSL certificates is starting wildcard certificates."
+pexcerpt: "It's all done and ready!"
 category: "Server-Management"
 tags: [HTTPS,SSL,TLS,wildcard,certificate]
 comments: true

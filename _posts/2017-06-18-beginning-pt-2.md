@@ -3,6 +3,7 @@ layout: post
 title: "Update - The Beginning Pt. 2"
 date: 2017-06-18
 author: "mobihack"
+pexcerpt: "It's all done and ready, AGAIN! This is the last of this."
 category: General
 tags: [general, announcement]
 ---

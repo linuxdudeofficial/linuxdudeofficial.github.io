@@ -3,6 +3,7 @@ layout: post
 title: "How to setup multiple PHP versions on Apache"
 date: 2017-06-18
 author: "mobihack"
+pexcerpt: "An in-depth guide in setting up multiple PHP versions on apache!"
 category: Server-Management
 tags: [linux,bash,apache2,php]
 comments: true

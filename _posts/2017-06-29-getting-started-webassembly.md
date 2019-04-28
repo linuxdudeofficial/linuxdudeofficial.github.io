@@ -3,6 +3,7 @@ layout: post
 title: "Getting started with WebAssembly!"
 date: 2017-06-29
 author: "mobihack"
+pexcerpt: "Getting started with WebAssembly to write high performance code for the web."
 category: WebAssembly
 tags: [js,javascript,webassembly,intro]
 comments: true

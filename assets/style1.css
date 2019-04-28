@@ -199,7 +199,8 @@ nav.navbar .navbar-end .navbar-search input:focus{
 .blog-list  .pagination .pagination-link.is-current{
 	background-color: white;
 	color: black;
-	border-color: black;
+    border-color: black;
+    cursor: default;
 }
 .blog-list .pagination-count{
 	margin-top: 1.5rem;
@@ -253,7 +254,10 @@ span.post-read-more a {
 }
 .post-title{
 	font-weight: 700;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
+}
+.post-meta{
+    margin-bottom: 0.5rem;
 }
 .post-meta .meta *{
 	vertical-align: middle;
