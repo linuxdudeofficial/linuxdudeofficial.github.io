@@ -16,95 +16,81 @@ page_id: "home"
     </div>
   </div>
 </section>
-    <section class="container blog-list">
-        <div class="featured-list">
-            <div class="section-title">
+<section class="container article-list">
+        <div class="section-title">
                 <h2><span>Featured</span></h2>
             </div>
-            <div class="column">
-                <div class="columns is-centered">
+            <div class="featured__article__list">
                         {% assign my_posts = site.posts | where:"featured",true %}
                         {% if my_posts.size > 1 %}
 					    {% for post in my_posts limit:2 %}
-					    <div class="column is-6">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="columns">
-                                    <div class="column is-4 wrap-thumbnail">
-                                        <div class="thumbnail" style="background-image:url({{ post.image.path }});">
-                                        </div>
-                                    </div>
-                                    <div class="column wrap-content">
-                                        <div class="content">
-                                            <h2 class="title is-size-5"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-                                            <p class="text is-size-6">{% if post.pexcerpt %}{{ post.pexcerpt }}{% else %}{{ post.content | truncatewords: 15 }}{% endif %}</p>
-                                        </div>
-                                        <div class="metafooter">
-                                            <div class="wrapfooter">
-
-                                                <span class="meta-footer-thumb">
-												<img class="author-thumb" src="/static/img/{{ post.author }}.jpg" alt="{{ post.author }}">
-												</span>
-                                                <span class="author-meta">
-												<span class="post-name">{{ post.author }}</span>
-                                                <br>
-
-                                                <span class="post-date">{{ post.date | date_to_string }}</span>
-                                                </span>
-                                                <span class="post-read-more"><a href="{{ post.url }}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+					    <article class="long">
+                                <div class="article__wrapper">
+                                        <figure class="image">
+                                                <img src="{{ post.image.path }}">
+                                        </figure>
+                                        <section class="article__content">
+                                                <div class="article__info">
+                                                        <h2 class="title is-size-5"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                                        <p class="text is-size-6">{% if post.pexcerpt %}{{ post.pexcerpt }}{% else %}{{ post.content | truncatewords: 15 }}{% endif %}</p>
+                                                </div>
+                                              
+                                                <footer>
+                                                        <section class="footer__left">
+                                                                <figure class="image">
+                                                                        <img class="is-rounded" src="/static/img/{{ post.author }}.jpg">
+                                                                </figure>
+                                                                <div class="footer__authorinfo">
+                                                                    <span class="name">{{ post.author }}</span>
+                                                                    <span class="date">{{ post.date | date_to_string }}</span>
+                                                                </div>
+                                                        </section>
+                                                        <section class="footer__right">
+                                                            </span><a href="{{ post.url }}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a>
+                                                        </section>
+                                                    </footer>
+                                        </section>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            </article>
 				{% endfor %}
 				{% endif %}
-                </div>
             </div>
-        </div>
-        <div class="post-list">
+</section>
+    <section class="container article-list">
             <div class="section-title">
                 <h2><span>All Articles</span></h2>
             </div>
-            <div class="column">
-                <div class="columns is-multiline">
+            <div class="main__article__list">
                     {% for post in paginator.posts %}
-                    <div class="column is-4">
-                        <div class="card">
-                            <div class="card-image wrap-thumbnail">
-                                <div class="thumbnail" style="background-image:url({{ post.image.path }});">
-								</div>
-                            </div>
-                            <div class="card-content">
-                                <div class="content">
-                                            <h2 class="title is-size-5"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-                                            <p class="text is-size-6">{% if post.pexcerpt %}{{ post.pexcerpt }}{% else %}{{ post.content | truncatewords: 15 }}{% endif %}</p>
-                                        </div>
-                                        <div class="metafooter">
-                                            <div class="wrapfooter">
-
-                                                <span class="meta-footer-thumb">
-												<img class="author-thumb" src="/static/img/{{ post.author }}.jpg" alt="{{ post.author }}">
-												</span>
-                                                <span class="author-meta">
-												<span class="post-name">{{ post.author }}</span>
-                                                <br>
-
-                                                <span class="post-date">{{ post.date | date_to_string }}</span>
-                                                </span>
-                                                <span class="post-read-more"><a href="{{ post.url }}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a></span>
-                                                <div class="clearfix"></div>
+                    <article>
+                            <div class="article__wrapper">
+                                    <figure class="image">
+                                            <img src="{{ post.image.path }}">
+                                    </figure>
+                                    <section class="article__content">
+                                            <div class="article__info">
+                                                    <h2 class="title is-size-5"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+                                                    <p class="text is-size-6">{% if post.pexcerpt %}{{ post.pexcerpt }}{% else %}{{ post.content | truncatewords: 15 }}{% endif %}</p>
                                             </div>
-                                        </div>
+                                          
+                                            <footer>
+                                                    <section class="footer__left">
+                                                            <figure class="image">
+                                                                    <img class="is-rounded" src="/static/img/{{ post.author }}.jpg">
+                                                            </figure>
+                                                            <div class="footer__authorinfo">
+                                                                <span class="name">{{ post.author }}</span>
+                                                                <span class="date">{{ post.date | date_to_string }}</span>
+                                                            </div>
+                                                    </section>
+                                                    <section class="footer__right">
+                                                        </span><a href="{{ post.url }}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewBox="0 0 25 25"><path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path></svg></a>
+                                                    </section>
+                                                </footer>
+                                    </section>
                             </div>
-                        </div>
-                    </div>
-    {% endfor %}
+                        </article>
+                        {% endfor %}
                 </div>
-            </div>
-        </div>
 	{% include blog_paginate.html %}
     </section>

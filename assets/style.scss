@@ -8,6 +8,7 @@ body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 14px;
 	background: white;
+	height: 100%;
 }
 a,
 a:hover,
@@ -38,7 +39,7 @@ nav.navbar.is-white .navbar-end > a.navbar-item {
 
 	&:hover {
 		background-color: white;
-		border-bottom: 2px lightgrey solid;
+		border-bottom: 2px 	lightgrey solid;
 	}
 	&.is-active {
 		background-color: white;
@@ -58,12 +59,7 @@ nav.navbar .navbar-end .navbar-search input {
 
 /* title block */
 .section-title {
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
+	h1, h2, h3, h4, h5, h6 {
 		color: rgb(8, 34, 57);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 		margin-bottom: 25px;
@@ -87,145 +83,162 @@ nav.navbar .navbar-end .navbar-search input {
 }
 
 /* Blog List */
-.blog-list {
-	.card {
+article{
+	
+	width: 100%;
+	
+	> .article__wrapper{
+		display: flex;
+		flex-direction: column;
+
+		margin: 10px;
+
 		-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
 		box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-		border-radius: 0px;
 	}
-}
-.post-list {
-	margin-top: 2rem;
-	.wrap-thumbnail {
-	height: 200px;
-}
-	.card-content {
-		min-height: 230px;
-	}
-}
-
-.blog-list {
-	.wrap-thumbnail {
-		height: 258px;
-		flex: 0 0 auto;
-		padding: 0px;
-		
-		> .thumbnail {
-			background-size: cover;
+	&.long{
+		.article__wrapper{
+		flex-direction: row;
+		figure{
+			width: 40%;
 			height: 100%;
-			display: block;
-			background-position: center;
-			background-origin: border-box !important;
-			border-top-left-radius: 2px;
+			img{
+				height: 100%;
+			}
+		}
+		.article__content{
+			width: 60%;
 		}
 	}
-	.wrapfooter {
-	font-size: 12px;
-	display: block;
+	}
+	figure{
+		height: 258px;
+		padding: 0;
+		width: 100%;
+		overflow: hidden;
+		img{
+			object-fit: cover;
+			height: 258px;
+			width: 100%;
+		}
+	}
+	.article__content{
+		min-height: 230px;
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		
+		padding: 2rem;
 
-	position: absolute;
-	bottom: 20px;
-	width: 88%;
-		span.post-name,
-span.post-date,
-span.author-meta {
-	display: inline-block;
-}
-span.post-date,
-span.post-read {
-	color: rgba(0, 0, 0, 0.44);
-}
-span.post-read-more {
-	align-items: center;
-	display: inline-block;
-	float: right;
-	margin-top: 8px;
-}
-span.post-read-more a {
-	color: #3273dc;
-	fill: #3273dc;
-}
-.author-meta {
-display: inline-block;
-	flex: 1 1 auto;
-	white-space: nowrap !important;
-	text-overflow: ellipsis !important;
-	overflow: hidden !important;
-}
-		.author-thumb {
-	width: 40px;
-	height: 40px;
-	float: left;
-	margin-right: 13px;
-	border-radius: 100%;
-}
-}
-}
-
-@media screen and (max-width: 768px) {
-	.featured-list .card {
-		margin-bottom: 20px;
-		.card-content {
-		min-height: 500px;
-	}
-	.wrap-thumbnail {
-		padding: 0px 10.5px;
-	}
-	}
-}
-@media screen and (max-width: 1088px) and (min-width: 768px) {
-	.blog-list{
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-}
-@media screen and (max-width: 769px) and (min-width: 500px) {
-	.post-list{
-		.columns{
+		footer{
+			font-size: 12px;
+	
+			padding:0;
+			background: none;
+	
 			display: flex;
-			flex-wrap: wrap;
-			.column{
-				width: 50%;
-				flex:none;
+			justify-content: space-between;
+			align-items: center;
+	
+			.footer__left{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				> .image{
+					height: 48px;
+					width: 48px;
+				}
+				> .footer__authorinfo{
+					width: 100%;
+					margin-left: 0.75rem;
+					> .name{
+						display: block;
+						margin-bottom: 0.15rem;
+					}
+				}
+			}
+			.footer__right{
+				>a{
+					color: $primary_color;
+					fill: $primary_color;
+					
+					
+					svg{transition: 0.2s; 
+				}
+				&:hover svg{
+					transform: scale(1.25);
+				}
+				}
+			}
+		}
+	}
+}
+
+.featured__article__list{
+	display: flex;
+	flex-direction: row;
+	margin: 0 -10px;
+
+	article.long{
+		width:50%;
+		.article__wrapper{
+			height: 100%;
+			figure{
+				width: 40%;
+			}
+			figure > img{
+				height:100%;
 			}
 		}
 		
 	}
-}
-
-.featured-list .card-content {
-	padding: 0px;
-
-	.wrap-content {
-		padding: 2rem;
-		> .content {
-			position: relative;
-		}
-		.title {
-			font-weight: bold;
-			font-size: 1.25rem;
-			font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-				"Helvetica Neue", Arial, sans-serif;
-		}
-		.text {
-			color: rgba(0, 0, 0, 0.44);
-			font-size: 1rem;
-			line-height: 1.4;
-			font-weight: 400;
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		article.long{
+			width:100%;
+			> figure{
+				//min-height: 200px;
+			}
 		}
 	}
-	.wrapfooter {
-	width: 58%;
-}
 }
 
+.main__article__list{
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap;
 
-@media screen and (max-width: 768px) {
-	.blog-list .wrapfooter {
-		width: 88%;
+	margin: 0 -10px;
+	article{
+		width:33.3%;
+		figure > img{
+			height:100%;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		article{
+			width:50%;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		article{
+			width:100%;
+		}
 	}
 }
-.blog-list .pagination {
+.article-list{
+	margin-bottom: 1.5rem;
+}
+@media screen and (max-width: 1088px) and (min-width: 768px) {
+	.article-list{
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+
+.pagination {
 	margin-top: 2rem;
 	padding: 10.5px;
 
